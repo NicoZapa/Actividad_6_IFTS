@@ -12,7 +12,7 @@ import java.util.*;
 public class Principal {
     public static void main(String[] args){
 
-        //** Lista de personas **
+        //**-- Lista de personas --**
         List<Ordenable> personas = new ArrayList<Ordenable>();
 
         personas.add(new Persona(39626252));
@@ -30,8 +30,6 @@ public class Principal {
                     Ordenable temp = personas.get(j);
                     personas.set(j, personas.get(i));
                     personas.set(i, temp);
-                }else if(personas.get(i).){
-
                 }
             }
         }
@@ -42,12 +40,12 @@ public class Principal {
         }
         System.out.println();
 
-        //** Lista de numeros **
+        //**-- Lista de numeros --**
         List<Ordenable> numeros = new ArrayList<Ordenable>();
 
         numeros.add(new Numero(10));
         numeros.add(new Numero(5));
-        numeros.add(new Numero(8));
+        numeros.add(new Numero(9));
         numeros.add(new Numero(20));
 
         System.out.println("DESORDENADO");
@@ -62,6 +60,10 @@ public class Principal {
                     Ordenable temp = numeros.get(j);
                     numeros.set(j, numeros.get(i));
                     numeros.set(i, temp);
+                }if(((Numero)numeros.get(i)).esIgual(numeros.get(j))){
+                    Ordenable temp2 = numeros.get(i);
+                    numeros.set(i, numeros.get(j));
+                    numeros.set(j, temp2);
                 }
             }
         }
@@ -71,8 +73,6 @@ public class Principal {
             System.out.println(n.num);
         }
         System.out.println();
-
-        //**Lista de **
 
         //ARRAY ALEATORIO
         int[] nums = dameArrayAleatorio(20, false);
